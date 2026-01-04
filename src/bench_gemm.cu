@@ -71,9 +71,11 @@ int main(int argc, char **argv)
 
   CUDA_CHECK(cudaMemcpy(dA, hA.data(), sizeA, cudaMemcpyHostToDevice));
   CUDA_CHECK(cudaMemcpy(dB, hB.data(), sizeB, cudaMemcpyHostToDevice));
+  CUDA_CHECK(cudaMemset(dC, 0, sizeC));
 
   // 暖机一次
   launch_gemm_kernel(ktype, dA, dB, dC, M, K1, N);
+  CUDA_CHECK(cudaGetLastError());
   CUDA_CHECK(cudaDeviceSynchronize());
 
   // 正式计时
@@ -84,6 +86,7 @@ int main(int argc, char **argv)
   {
     timer.start();
     launch_gemm_kernel(ktype, dA, dB, dC, M, K1, N);
+    CUDA_CHECK(cudaGetLastError());
     CUDA_CHECK(cudaDeviceSynchronize());
     float ms = timer.stop();
     total_ms += ms;

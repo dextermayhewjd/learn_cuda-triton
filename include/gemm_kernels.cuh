@@ -22,6 +22,10 @@ __global__ void gemm_naive_kernel(const float *__restrict__ A,
 
   if (row < M && col < N)
   {
+    if (row == 0 && col == 0)
+    {
+      printf("Running NAIVE kernel, M=%d, K=%d, N=%d\n", M, K, N);
+    }
     float sum = 0.f;
     for (int i = 0; i < K; ++i)
     {
