@@ -20,3 +20,8 @@ add_executable(bench_gemm src/bench_gemm.cu)
 
 # 链接 CUDA 运行库
 target_link_libraries(bench_gemm cudart)
+
+set(CMAKE_BUILD_TYPE Release)
+
+# 方便 profiler 显示源码行
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -G -lineinfo")
