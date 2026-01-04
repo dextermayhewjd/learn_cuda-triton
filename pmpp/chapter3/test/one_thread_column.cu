@@ -21,3 +21,5 @@ __global__ void one_thread_row(float *M_mat, float *N_mat, float *P_mat,
     }
   }
 }
+
+// 脑袋里得有一张图 并且要写一下 for loop每个i在做什么
