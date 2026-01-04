@@ -24,9 +24,19 @@ __global__ void picture_kernel(float *out, float *in, int width, int height)
 }
 
 /*
-我觉得这里的重点是 每个thread能够通过自身的col 和row来确定两个东西
+我觉得这里的重点是
+# 每个thread能够通过自身的col 和row来确定两个东西
+1. output中自己负责的pixel 或者2d图中的位置
+2. 同时 要清楚在input中读取值 的位置 如何对应上
 
-pout的作为thread 作用的pixel
-和pin的 作为thread 应该读取的pixel
 idx = row * width + col永远应该是出图
+
+# 同时 传入的width和height能确定的点
+1. 因为block会多传一些thread
+要确定工作的thread的row和 column是在范围内的
+  if (col < width && row < height)
+2. 能够使用预先设定的width和 height来做 对应的内存访问位置的计算
+int greyOffSet = row * width + col;
+
+两者相互确保output的每个pixel的内存地址都有一个thread来管
 */
