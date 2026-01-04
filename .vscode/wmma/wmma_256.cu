@@ -49,6 +49,7 @@ __global__ void wmma_gemm_256(const half *__restrict__ A,
 
   // ---------------------------
   // 3) 声明 fragments（注意：fragment 的“数据分布在整个 warp 的 32 个线程里”）
+  // ---------------------------
   wmma::fragment<wmma::matrix_a, WMMA_M, WMMA_N, WMMA_K, half, wmma::row_major> a_frag;
   wmma::fragment<wmma::matrix_b, WMMA_M, WMMA_N, WMMA_K, half, wmma::col_major> b_frag;
   wmma::fragment<wmma::accumulator, WMMA_M, WMMA_N, WMMA_K, float> c_frag;
