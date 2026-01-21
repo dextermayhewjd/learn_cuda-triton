@@ -1,0 +1,23 @@
+
+# Build artifacts
+build/
+cmake-build*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+*.cmake
+
+# Binaries
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+*.out
+
+# Generated data
+*.bin
+*.log
+
+# VSCode
+.vscode/
