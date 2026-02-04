@@ -1,0 +1,4 @@
+/home/fredkeira/projects/learn_cuda/build/CMakeFiles/prepare_data.dir
+/home/fredkeira/projects/learn_cuda/build/CMakeFiles/bench_gemm.dir
+/home/fredkeira/projects/learn_cuda/build/CMakeFiles/edit_cache.dir
+/home/fredkeira/projects/learn_cuda/build/CMakeFiles/rebuild_cache.dir

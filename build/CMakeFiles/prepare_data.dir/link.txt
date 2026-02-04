@@ -1,0 +1,1 @@
+/usr/bin/g++  -O2 -O3 -DNDEBUG CMakeFiles/prepare_data.dir/src/prepare_data.cpp.o -o prepare_data   -L/usr/local/cuda/lib64 

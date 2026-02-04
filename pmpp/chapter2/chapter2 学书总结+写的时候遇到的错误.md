@@ -4,25 +4,28 @@
 整体就几个点
 ### 三个函数
 #### 1.cudaMalloc()
-  两个参数  
-  1.
-    是void**
-    是分配对象的指针的地址 & d_A
-    cudaMalloc 会在 device 上申请内存，并把“device 地址”写入指针 d_A 中
+  两个参数    
+  1.  
+    是void**  
+    是分配对象的指针的地址 & d_A  
+    cudaMalloc 会在 device 上申请内存，并把“device 地址”写入指针 d_A 中  
   2.
     size 记得sizeof（int） * N
   
 
 #### 2.cudaMemcpy()
-四个参数
-    1. 是目标地址 
+四个参数: 
+    1. 是目标地址  
     2. 是原地址  
-    3. size
-    4. cudaMemcpyHostToDevice / cudaMemcpyDeviceToHost
+    3. size  
+    4. cudaMemcpyHostToDevice / cudaMemcpyDeviceToHost  
+
 ```c++
 cudaMemcpy(destination, source, size, direction);
 ```
+
 #### 3.cudaFree()
+
  一个参数 只要是 device上的地址就行 也就是 给 d_A
 
 ## 2.5 核函数 和 线程
