@@ -193,7 +193,7 @@ kernel 太小了吗？
 👉 行动：算力路径 & ILP
 
 七、给你一个“GPU 优化流程表”（你可以照着用）
-1. 画 roofline / 算 intensity
+1. 画 roofline / 算 intensity  
 2. 定位 memory-bound 还是 compute-bound
 3. memory-bound:
    - coalescing
